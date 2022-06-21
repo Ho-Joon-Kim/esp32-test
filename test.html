@@ -1,12 +1,69 @@
-<html>
-    <head>
-    <style>
-    </style>
-    </head>
-    <body>
-        <font size=45 ><CENTER>ANGEL RING<br></CENTER></font>
-        <CENTER><font size=16><a href=\"/H\"> On </a> <br></font></CENTER>
-        <CENTER><font size=16><a href=\"/L\"> Off </a> <br><br></font></CENTER>
-        <CENTER><font size=45>WATER STATE<br></font></CENTER>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+    let lightOn = false;
+
+    function onLightOnClicked() {
+      document.getElementById('light-button-section').innerHTML = '<button onclick="onLightOnClicked()">On</button>';
+      fetch(window.location.href + '/H');
+    }
+
+    function onLightOffClicked() {
+      document.getElementById('light-button-section').innerHTML = '<button onclick="onLightOnClicked()">On</button>';
+      fetch(window.location.href + '/L');
+    }
+  </script>
+
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .content-root {
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-root">
+    <div class="input-container">
+      <div class="input-label">IP</div>
+      <div class="input-section">
+        <input />
+        <button>Set IP</button>
+      </div>
+    </div>
+    <div class="input-container">
+      <div class="input-label">Port</div>
+      <div class="input-section">
+        <input />
+        <button>Set IP</button>
+      </div>
+    </div>
+    <div class="button-container">
+      <div class="button-section">
+        <div id="light-button-section">
+          <button onclick="onLightOnClicked()">On</button>
+        </div>
+        <button>Water Proof</button>
+        <button>수위센서</button>
+      </div>
+      <div class="image-section">
+        <img />
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
